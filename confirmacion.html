@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmacion de la reserva</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <script>
+        $(document).ready(function (){
+
+            let lugar = localStorage.getItem("lugar");
+            let cantidadPersonas = localStorage.getItem("cantidadPersonas");
+            let llegada = localStorage.getItem("llegada");
+            let salida = localStorage.getItem("salida");
+
+
+            $("#datos").append("<td>" + lugar + "</td");
+            $("#datos").append("<td>" + cantidadPersonas + "</td");
+            $("#datos").append("<td>" + llegada + "</td");
+            $("#datos").append("<td>" + salida + "</td");
+
+            $("#btn-reserva").click(function (){
+            localStorage.clear();
+            window.location.replace("index.html");
+            });
+        });
+       
+    </script>
+    
+</head>
+<body>
+    <div id="container">
+
+        <table>
+            <caption>Confirmacion reserva</caption>
+            <tr>
+                <td>Lugar</td>
+                <td>Cantidad Personas</td>
+                <td>Llegada</td>
+                <td>Salida</td>
+            </tr>
+
+            <tr id="datos"></tr>
+
+            <tr>
+                <td colspan="4">
+                    <button id="btn-reserva" class="btn-reservar">Confirmar</button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>
